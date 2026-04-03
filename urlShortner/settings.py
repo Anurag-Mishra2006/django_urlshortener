@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-h0c$3*sxirq%3s3g06plkw0vn0cu_7sgn&mb9+zat0z&apn-$4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://django-urlshortener-h82i.onrender.com"]
 
 
 # Application definition
