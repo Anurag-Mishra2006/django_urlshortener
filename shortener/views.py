@@ -11,7 +11,7 @@ def create_short_url(request):
     if serializer.is_valid():
         url = serializer.save()
 
-        short_url = f"https://django-urlshortener-h82i.onrender.com/{url.short_code}"
+        short_url = request.build_absolute_uri(f'/{url.short_code}')
 
         return Response({
             "short_url": short_url,
@@ -39,6 +39,6 @@ def home(request):
         original_url = request.POST.get("original_url")
         url = URL.objects.create(original_url=original_url)
 
-        short_url = f"{https://django-urlshortener-h82i.onrender.com}/{url.short_code}"
+        short_url = request.build_absolute_uri(f'/{url.short_code}')
 
     return render(request, "shortener/index.html", {"short_url": short_url})
