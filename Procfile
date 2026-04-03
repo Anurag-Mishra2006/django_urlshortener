@@ -1,1 +1,1 @@
-web: gunicorn config.wsgi:application
+web: gunicorn urlShortner.wsgi:application
